@@ -7,19 +7,25 @@ const Form = (props) => {
   const [url, setUrl] = useState('')
   const changeFlag = props.changeFlag;
   return (
-    <form onSubmit={async (event) => {
+    <form className="form" onSubmit={async (event) => {
       event.preventDefault();
       await addNewPlayer(name, breed, url)
-      console.log('hello')
+      console.log()
       //// Still needs to auto render after submit ////
     }}>
-      <label htmlFor="name">Name:</label>
-      <input value={name} type="text" id="name" onChange={(event) => setName(event.target.value)}></input>
-      <label htmlFor="breed">Breed:</label>
-      <input value={breed} type="text" id="breed" onChange={(event) => setBreed(event.target.value)}></input>
-      <label htmlFor="url">ImageURL:</label>
-      <input value={url} type="text" id="breed" onChange={(event) => setUrl(event.target.value)}></input>
-      <button onClick={() => {changeFlag()}}>Submit</button>
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input value={name} type="text" id="name" onChange={(event) => setName(event.target.value)}></input>
+      </div>
+      <div>
+        <label htmlFor="breed">Breed:</label>
+        <input value={breed} type="text" id="breed" onChange={(event) => setBreed(event.target.value)}></input>
+      </div>
+      <div>
+        <label htmlFor="url">ImageURL:</label>
+        <input value={url} type="text" id="breed" onChange={(event) => { setUrl(event.target.value) }}></input>
+      </div>
+      <button>Submit</button>
     </form >
   )
 }

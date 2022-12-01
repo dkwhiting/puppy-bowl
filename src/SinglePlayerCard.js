@@ -13,18 +13,20 @@ const SinglePlayerCard = (props) => {
         <p className="pup-number">{'#' + player.id}</p>
       </div>
       <img src={player.imageUrl} alt={`photo of ${player.name} the puppy`} />
-      <button
-        className="detail-button"
-        data-id={player.id}
-        onClick={() => { fetchSinglePlayer(player.id) }}>
-        See Details
-      </button>
-      <button 
-      className="remove-player-button" 
-      data-id={player.id} 
-      onClick={async () => { deletePlayer(player); changeFlag() }}>
-        Remove from roster
-      </button>
+      <div className="pup-buttons">
+        <button
+          className="detail-button"
+          data-id={player.id}
+          onClick={() => { fetchSinglePlayer(player.id) }}>
+          See Details
+        </button>
+        <button className="remove-player-button" data-id={player.id} onClick={async (event) => {
+          console.log(player.id)
+          await deletePlayer(player.id)
+        }}>
+          Remove from roster
+        </button>
+      </div>
     </div >
   )
 }

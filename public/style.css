@@ -4,6 +4,11 @@
   justify-content: space-evenly;
 }
 
+.form {
+  display: flex;
+  gap: 25px;
+}
+
 .single-player-card {
   flex-basis: 200px;
   flex-grow: 1;
@@ -17,10 +22,16 @@
   justify-content: space-between;
 }
 
-.single-player-card img, .single-player-view img {
+.single-player-card img,
+.single-player-view img {
   width: 100%;
   border-radius: 10px;
   margin: 10px 0px;
+}
+
+.pup-buttons {
+  display: flex;
+  flex-direction: column;
 }
 
 .header-info {
@@ -30,7 +41,7 @@
   line-height: 10px;
 }
 
-.header-info > p {
+.header-info>p {
   margin: 5px;
 }
 
@@ -53,6 +64,6 @@
   flex-direction: column;
 }
 
-.single-player-view > p {
+.single-player-view>p {
   margin: 10px 0px 0px 0px;
 }
