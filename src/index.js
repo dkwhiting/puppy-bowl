@@ -4,22 +4,28 @@ import App from './App';
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2211-ftb-et-web-ft/`;
 
 //Fetch player list
+
 //Fetch single player
 //Add player
 export const addNewPlayer = async (name, breed, url) => {
-  const response = await fetch(
-    `${APIURL}/players`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: name,
-        breed: breed,
-        imageUrl: url
-      }),
-    })
+  try {
+    const response = await fetch(
+      `${APIURL}/players`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: name,
+          breed: breed,
+          imageUrl: url,
+
+        }),
+      })
+  } catch (err) {
+    console.log('Oops! There was a problem uploading new player')
+  }
 
 }
 
@@ -41,6 +47,8 @@ export const deletePlayer = async (player) => {
 
 //Fetch Teammates
 
+
+// getTeams()
 const appElement = document.getElementById("app");
 const root = createRoot(appElement);
 

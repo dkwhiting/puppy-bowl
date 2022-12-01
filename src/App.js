@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config()
 import React, { useState, useEffect } from "react";
 import AllPlayersContainer from "./AllPlayersContainer";
 import Form from "./Form"
@@ -6,6 +7,7 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2211-ftb-et-web-ft/`;
 const App = () => {
   const [playerList, setPlayerList] = useState([]);
   const [selectedPlayer, setSelectedPlayer] = useState({})
+
   const getPlayers = async () => {
     try {
       const response = await fetch(`${APIURL}/players`,);
@@ -20,7 +22,7 @@ const App = () => {
 
   useEffect(() => {
     getPlayers();
-  }, [])
+  })
 
   const fetchSinglePlayer = async (playerId) => {
     try {
@@ -50,7 +52,8 @@ const App = () => {
         playerList={playerList}
         selectedPlayer={selectedPlayer}
         fetchSinglePlayer={fetchSinglePlayer}
-        backToAllPlayers={backToAllPlayers} />
+        backToAllPlayers={backToAllPlayers}
+        setPlayerList={setPlayerList} />
     </div>
     //new-player-form
     //all-player-container
