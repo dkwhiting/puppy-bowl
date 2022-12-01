@@ -23,6 +23,7 @@ const SinglePlayerCard = (props) => {
         <button className="remove-player-button" data-id={player.id} onClick={async (event) => {
           console.log(player.id)
           await deletePlayer(player.id)
+          changeFlag()
         }}>
           Remove from roster
         </button>

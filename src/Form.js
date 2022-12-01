@@ -25,7 +25,7 @@ const Form = (props) => {
         <label htmlFor="url">ImageURL:</label>
         <input value={url} type="text" id="breed" onChange={(event) => { setUrl(event.target.value) }}></input>
       </div>
-      <button>Submit</button>
+      <button onClick={() => {changeFlag()}}>Submit</button>
     </form >
   )
 }
