@@ -1,10 +1,17 @@
 import React from "react";
+import SinglePlayerCard from "./SinglePlayerCard";
 
-const AllPlayersContainer = () => {
+const AllPlayersContainer = (props) => {
+  const playerList = props.playerList;
   return (
-    <div className="all-players-container">
-      <div className="single-player-container">Pup goes here</div>
-    </div>
+    <div id="all-players-container">{
+      playerList.map((player, index) => {
+        return (
+          <SinglePlayerCard player={player} key={player.id}/>
+        )
+      })
+      
+    }</div>
   )
 }
 

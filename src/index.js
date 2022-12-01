@@ -1,7 +1,11 @@
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
-//const App = () => { return (<div> <p>Hello world!</p> </div>)}
+//Fetch player list
+//Fetch single player
+//Add player
+//Remove player
+//Fetch Teammates
 
 const appElement = document.getElementById("app");
 const root = createRoot(appElement);

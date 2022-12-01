@@ -41,6 +41,11 @@ const dummyPlayers = [
 
 const App = () => {
   const [playerList, setPlayerList] = useState(dummyPlayers);
+
+  const updatePlayers = () => {
+    // listCopy = [...playerList]
+    //setPlayerList(addPlayerFunc(listCopy))
+  }
   return (
     <div>
       <Form />
