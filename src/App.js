@@ -39,17 +39,32 @@ const dummyPlayers = [
 ]
 
 
+
+
 const App = () => {
+
+  const getPlayers = async () => {
+    try {
+      const response = await fetch(`${APIURL}/players`);
+      const result = await response.json();
+      console.log(result.data.players)
+      return result
+    } catch (err) {
+      console.log(err, 'Trouble fetching players')
+    }
+  }
+
+  getPlayers()
   const [playerList, setPlayerList] = useState(dummyPlayers);
   return (
     <div>
       <Form />
-      <AllPlayersContainer playerList={playerList}/>
+      <AllPlayersContainer playerList={playerList} />
     </div>
     //new-player-form
     //all-player-container
-      //mapped single players
-        //API Data and two buttons
+    //mapped single players
+    //API Data and two buttons
     //details button will redraw page with detailed-player
     //detailed-player needs a back button and teams info
   )

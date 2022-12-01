@@ -3,9 +3,9 @@ import React from "react";
 const Form = () => {
   return (
     <form>
-      <label for="name">Name:</label>
+      <label htmlFor="name">Name:</label>
       <input type="text" id="name"></input>
-      <label for="breed">Breed:</label>
+      <label htmlFor="breed">Breed:</label>
       <input type="text" id="breed"></input>
       <button>Submit</button>
     </form>
