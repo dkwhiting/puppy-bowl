@@ -27,7 +27,7 @@ export const addNewPlayer = async (name, breed, url) => {
 export const deletePlayer = async (player) => {
   try {
     const response = await fetch(
-      `${APIURL}/players.data.${player}`,
+      `${APIURL}/players/${player}`,
       {
         method: 'DELETE'
       }
