@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AllPlayersContainer from "./AllPlayersContainer";
 import Form from "./Form"
-const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2211-ftb-et-web-ft/`;
+export const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2211-ftb-et-web-ft/`;
 const dummyPlayers = [
   {
     "id": 9233,
@@ -48,28 +48,17 @@ const App = () => {
     try {
       const response = await fetch(`${APIURL}/players`,);
       const result = await response.json();
-<<<<<<< HEAD
-      console.log(result.data.players)
-      return result.data.players
 
-=======
       //console.log(result.data.players)
       setPlayerList(result.data.players)
->>>>>>> 5b1bd1bf46afeeeeea01adadf7f922b1d8af5f2d
     } catch (err) {
       console.log(err, 'Trouble fetching players')
     }
   }
 
-<<<<<<< HEAD
-
-
-  const [playerList, setPlayerList] = useState(dummyPlayers);
-=======
   useEffect(() => {
-    getPlayers(); 
+    getPlayers();
   }, [])
->>>>>>> 5b1bd1bf46afeeeeea01adadf7f922b1d8af5f2d
 
   const updatePlayers = () => {
     // listCopy = [...playerList]
@@ -77,7 +66,7 @@ const App = () => {
   }
   return (
     <div>
-      <Form APIURL={APIURL} />
+      <Form />
       <AllPlayersContainer playerList={playerList} />
     </div>
     //new-player-form

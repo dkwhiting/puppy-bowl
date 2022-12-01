@@ -1,5 +1,6 @@
 import React from "react";
 import SinglePlayerCard from "./SinglePlayerCard";
+import { deletePlayer } from "./index";
 
 const AllPlayersContainer = (props) => {
   const playerList = props.playerList;
@@ -7,10 +8,10 @@ const AllPlayersContainer = (props) => {
     <div id="all-players-container">{
       playerList.map((player, index) => {
         return (
-          <SinglePlayerCard player={player} key={player.id}/>
+          <SinglePlayerCard player={player} key={player.id} deletePlayer={deletePlayer} />
         )
       })
-      
+
     }</div>
   )
 }

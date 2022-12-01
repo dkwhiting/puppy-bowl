@@ -2,8 +2,9 @@ import React from "react";
 
 const SinglePlayerCard = (props) => {
   const player = props.player;
+  const deletePlayer = props.deletePlayer
   return (
-    <div 
+    <div
       className="single-player-card">
       Pup goes here
       <div className="header-info">
@@ -14,10 +15,10 @@ const SinglePlayerCard = (props) => {
       <button className="detail-button" data-id={player.id}>
         See Details
       </button>
-      <button className="remove-player-button" data-id={player.id}>
+      <button className="remove-player-button" data-id={player.id} onClick={async () => { deletePlayer(player) }}>
         Remove from roster
       </button>
-    </div>
+    </div >
   )
 }
 
