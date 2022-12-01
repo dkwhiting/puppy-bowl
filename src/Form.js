@@ -10,6 +10,7 @@ const Form = (props) => {
     <form onSubmit={async (event) => {
       event.preventDefault();
       await addNewPlayer(name, breed, url)
+      console.log('hello')
       //// Still needs to auto render after submit ////
     }}>
       <label htmlFor="name">Name:</label>
