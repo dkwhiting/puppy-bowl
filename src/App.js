@@ -45,16 +45,18 @@ const App = () => {
 
   const getPlayers = async () => {
     try {
-      const response = await fetch(`${APIURL}/players`);
+      const response = await fetch(`${APIURL}/players`,);
       const result = await response.json();
       console.log(result.data.players)
-      return result
+      return result.data.players
+
     } catch (err) {
       console.log(err, 'Trouble fetching players')
     }
   }
 
-  getPlayers()
+
+
   const [playerList, setPlayerList] = useState(dummyPlayers);
 
   const updatePlayers = () => {
@@ -63,7 +65,7 @@ const App = () => {
   }
   return (
     <div>
-      <Form />
+      <Form APIURL={APIURL} />
       <AllPlayersContainer playerList={playerList} />
     </div>
     //new-player-form
