@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AllPlayersContainer from "./AllPlayersContainer";
-
+import Form from "./Form"
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2211-ftb-et-web-ft/`;
 const dummyPlayers = [
   {
@@ -38,14 +38,16 @@ const dummyPlayers = [
   },
 ]
 
+
 const App = () => {
   const [playerList, setPlayerList] = useState(dummyPlayers);
   return (
-    <AllPlayersContainer playerList={playerList}/>
-
+    <div>
+      <Form />
+      <AllPlayersContainer playerList={playerList}/>
+    </div>
     //new-player-form
     //all-player-container
-
       //mapped single players
         //API Data and two buttons
     //details button will redraw page with detailed-player
