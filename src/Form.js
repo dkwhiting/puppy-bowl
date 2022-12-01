@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { addNewPlayer } from "./index";
 
-const Form = () => {
+const Form = (props) => {
+  const [name, setName] = useState('')
+  const [breed, setBreed] = useState('')
+  const [url, setUrl] = useState('')
+
   return (
-    <form>
+    <form onSubmit={async (event) => {
+      event.preventDefault();
+      await addNewPlayer(name, breed, url)
+      console.log('hello')
+      //// Still needs to auto render after submit ////
+    }}>
       <label htmlFor="name">Name:</label>
-      <input type="text" id="name"></input>
+      <input value={name} type="text" id="name" onChange={(event) => setName(event.target.value)}></input>
       <label htmlFor="breed">Breed:</label>
-      <input type="text" id="breed"></input>
+      <input value={breed} type="text" id="breed" onChange={(event) => setBreed(event.target.value)}></input>
+      <label htmlFor="url">ImageURL:</label>
+      <input value={url} type="text" id="breed" onChange={(event) => setUrl(event.target.value)}></input>
       <button>Submit</button>
-    </form>
+    </form >
   )
 }
 
