@@ -8,13 +8,19 @@ const AllPlayersContainer = (props) => {
   const selectedPlayer = props.selectedPlayer;
   const fetchSinglePlayer = props.fetchSinglePlayer;
   const backToAllPlayers = props.backToAllPlayers;
+  const changeFlag = props.changeFlag;
   return (
     <div id="all-players-container">{
       Object.keys(selectedPlayer).length
         ? <SinglePlayerView selectedPlayer={selectedPlayer} backToAllPlayers={backToAllPlayers} />
         : playerList.map((player, index) => {
           return (
-            <SinglePlayerCard player={player} key={player.id} deletePlayer={deletePlayer} fetchSinglePlayer={fetchSinglePlayer} />
+            <SinglePlayerCard 
+            player={player} 
+            key={player.id} 
+            deletePlayer={deletePlayer} 
+            fetchSinglePlayer={fetchSinglePlayer}
+            changeFlag={changeFlag}/>
           )
         })
 

@@ -5,7 +5,7 @@ const Form = (props) => {
   const [name, setName] = useState('')
   const [breed, setBreed] = useState('')
   const [url, setUrl] = useState('')
-
+  const changeFlag = props.changeFlag;
   return (
     <form onSubmit={async (event) => {
       event.preventDefault();
@@ -19,7 +19,7 @@ const Form = (props) => {
       <input value={breed} type="text" id="breed" onChange={(event) => setBreed(event.target.value)}></input>
       <label htmlFor="url">ImageURL:</label>
       <input value={url} type="text" id="breed" onChange={(event) => setUrl(event.target.value)}></input>
-      <button>Submit</button>
+      <button onClick={() => {changeFlag()}}>Submit</button>
     </form >
   )
 }

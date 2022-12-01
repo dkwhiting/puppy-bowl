@@ -3,48 +3,10 @@ import AllPlayersContainer from "./AllPlayersContainer";
 import Form from "./Form"
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2211-ftb-et-web-ft/`;
 
-const dummyPlayers = [
-  {
-    "id": 9233,
-    "name": "heckinboy",
-    "breed": "nice",
-    "status": "bench",
-    "imageUrl": "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
-    "createdAt": "2022-11-28T21:16:09.725Z",
-    "updatedAt": "2022-11-28T21:16:09.725Z",
-    "teamId": null,
-    "cohortId": 283
-  },
-  {
-    "id": 9248,
-    "name": "Kevin",
-    "breed": "Corgi",
-    "status": "bench",
-    "imageUrl": "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
-    "createdAt": "2022-11-29T01:05:06.547Z",
-    "updatedAt": "2022-11-29T01:05:06.547Z",
-    "teamId": null,
-    "cohortId": 283
-  },
-  {
-    "id": 9249,
-    "name": "Pistol Pete",
-    "breed": "Basset Hound",
-    "status": "bench",
-    "imageUrl": "https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png",
-    "createdAt": "2022-11-29T02:26:03.716Z",
-    "updatedAt": "2022-11-29T02:26:03.716Z",
-    "teamId": null,
-    "cohortId": 283
-  },
-]
-
-
-
-
 const App = () => {
   const [playerList, setPlayerList] = useState([]);
   const [selectedPlayer, setSelectedPlayer] = useState({})
+  const [addRemoveFlag, setAddRemoveFlag] = useState(0)
   const getPlayers = async () => {
     try {
       const response = await fetch(`${APIURL}/players`,);
@@ -59,7 +21,11 @@ const App = () => {
 
   useEffect(() => {
     getPlayers();
-  }, [])
+  }, [addRemoveFlag])
+
+  const changeFlag = () => {
+    setAddRemoveFlag(addRemoveFlag + 1);
+  }
 
   const fetchSinglePlayer = async (playerId) => {
     try {
@@ -80,12 +46,13 @@ const App = () => {
 
   return (
     <div>
-      <Form />
+      <Form changeFlag={changeFlag}/>
       <AllPlayersContainer
         playerList={playerList}
         selectedPlayer={selectedPlayer}
         fetchSinglePlayer={fetchSinglePlayer}
-        backToAllPlayers={backToAllPlayers} />
+        backToAllPlayers={backToAllPlayers}
+        changeFlag={changeFlag} />
     </div>
     //new-player-form
     //all-player-container
