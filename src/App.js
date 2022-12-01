@@ -42,10 +42,6 @@ const App = () => {
     setSelectedPlayer({})
   }
 
-  const updatePlayers = () => {
-    // listCopy = [...playerList]
-    //setPlayerList(addPlayerFunc(listCopy))
-  }
   return (
     <div>
       <Form />

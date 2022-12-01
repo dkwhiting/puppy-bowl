@@ -6,10 +6,9 @@ const SinglePlayerCard = (props) => {
   return (
     <div 
       className="single-player-card">
-      Pup goes here
       <div className="header-info">
         <p className="pup-title">{player.name}</p>
-        <p className="pup-number">{player.id}</p>
+        <p className="pup-number">{'#' + player.id}</p>
       </div>
       <img src={player.imageUrl} alt={`photo of ${player.name} the puppy`} />
       <button 
