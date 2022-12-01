@@ -1,4 +1,5 @@
 import React from "react";
+import Form from "./Form"
 
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2211-ftb-et-web-ft/`;
 const dummyPlayers = [
@@ -37,16 +38,17 @@ const dummyPlayers = [
   },
 ]
 
+
 const App = () => {
   return (
     <div>
-      <p>Howdy!</p>
-    </div>
+      <Form />
 
+    </div>
     //new-player-form
     //all-player-container
-      //mapped single players
-        //API Data and two buttons
+    //mapped single players
+    //API Data and two buttons
     //details button will redraw page with detailed-player
     //detailed-player needs a back button and teams info
   )
