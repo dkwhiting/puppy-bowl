@@ -13,7 +13,7 @@ const teamCard = (props) => {
         currentTeam = teams[i]
       }
     }
-
+    console.dir(currentTeam.players)
     return await currentTeam.players
   }
 
@@ -26,7 +26,7 @@ const teamCard = (props) => {
         :
         <><h2>Teammates</h2>
           <ul>
-            {teammates.length <= 1
+            {teammates.length > 1
               ? teammates.map((teammate) => {
                 return player.name != teammate.name
                   ? <li key={teammate.id} onClick={() => { fetchSinglePlayer(teammate.id) }}>{teammate.name}</li>

@@ -6,7 +6,7 @@ const Form = (props) => {
   const [name, setName] = useState('')
   const [breed, setBreed] = useState('')
   const [url, setUrl] = useState('')
-  const [team, setTeam] = useState(0)
+  const [team, setTeam] = useState(532)
 
   const smallerTeam = async () => {
     let newArr = []
@@ -14,7 +14,7 @@ const Form = (props) => {
     for (let i in teams) {
       newArr.push(teams[i])
     }
-    console.log('Ruff: ' + newArr[0].players.length + ' Fluff: ' + newArr[1].players.length)
+
     if (newArr[0].players.length > newArr[1].players.length) {
       return 533
     } else {
@@ -34,7 +34,6 @@ const Form = (props) => {
       } else {
         setTeam(533)
       }
-      console.log()
     }
     }>
       <div>
@@ -57,7 +56,7 @@ const Form = (props) => {
           <option value={533}>Fluff</option>
         </select>
       </div>
-      <button onClick={() => {changeFlag()}}>Submit</button>
+      <button>Submit</button>
     </form >
   )
 }
