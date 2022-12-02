@@ -10,16 +10,16 @@ const teamCard = (props) => {
     try {
       let teams = await fetchTeams()
       teams.forEach(team => {
-        if (team.id === player.teamId){
+        if (team.id === player.teamId) {
           setTeammates(team.players)
         }
       })
     } catch (err) {
-      console.error('No teammates pal',err)
+      console.error('No teammates pal', err)
     }
   }
-  
-  useEffect(()=> {
+
+  useEffect(() => {
     getTeammates();
   }, [])
 
@@ -28,7 +28,10 @@ const teamCard = (props) => {
       {player.teamId == null
         ? <h2>{player.name} is not on a team!</h2>
         :
-        <><h2>Teammates</h2>
+        <>
+          <img src={require(`./images/${player.team.name.toLowerCase()}.png`)} alt={`${player.team.name} logo`}></img>
+          <h2>Teammates</h2>
+
           <ul>
             {teammates.length
               ? teammates.map((teammate) => {

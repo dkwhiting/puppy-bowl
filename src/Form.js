@@ -26,6 +26,9 @@ const Form = (props) => {
   return (
     <form className="form" onSubmit={async (event) => {
       event.preventDefault();
+      if (url == '') {
+        setUrl('https://loremflickr.com/320/480/dog')
+      }
       await addNewPlayer(name, breed, url, team);
       if (event.target[3].selectedIndex === 0) {
         setTeam(await smallerTeam())
