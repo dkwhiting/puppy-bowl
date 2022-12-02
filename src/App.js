@@ -23,7 +23,7 @@ const App = () => {
   //using playerList here will make constant fetch requests. can we set a 
   useEffect(() => {
     getPlayers();
-  },)
+  }, [])
 
   const fetchSinglePlayer = async (playerId) => {
     try {

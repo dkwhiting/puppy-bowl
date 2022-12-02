@@ -57,8 +57,8 @@ export const fetchTeams = async (playerId) => {
     console.error("Oh boy, can't seem to fetch the teams", err);
   }
 };
-fetchTeams()
-// getTeams()
+
+
 const appElement = document.getElementById("app");
 const root = createRoot(appElement);
 
