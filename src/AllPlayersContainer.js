@@ -8,7 +8,6 @@ const AllPlayersContainer = (props) => {
   const selectedPlayer = props.selectedPlayer;
   const fetchSinglePlayer = props.fetchSinglePlayer;
   const backToAllPlayers = props.backToAllPlayers;
-  const changeFlag = props.changeFlag;
   return (
     <div id="all-players-container">{
       Object.keys(selectedPlayer).length
@@ -20,7 +19,7 @@ const AllPlayersContainer = (props) => {
             key={player.id} 
             deletePlayer={deletePlayer} 
             fetchSinglePlayer={fetchSinglePlayer}
-            changeFlag={changeFlag}/>
+            />
           )
         })
 

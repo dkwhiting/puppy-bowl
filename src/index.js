@@ -34,6 +34,7 @@ export const deletePlayer = async (player) => {
     );
     const result = await response.json();
     console.log(result);
+    setPlayerList([]);
   } catch (err) {
 
   }

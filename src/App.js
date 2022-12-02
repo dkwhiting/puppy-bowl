@@ -6,7 +6,7 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2211-ftb-et-web-ft/`;
 const App = () => {
   const [playerList, setPlayerList] = useState([]);
   const [selectedPlayer, setSelectedPlayer] = useState({})
-  const [addRemoveFlag, setAddRemoveFlag] = useState(0)
+  //call setPlayerlist in deletePlayer and set useEffect to monitor playerList
   const getPlayers = async () => {
     try {
       const response = await fetch(`${APIURL}/players`,);
@@ -21,11 +21,7 @@ const App = () => {
 
   useEffect(() => {
     getPlayers();
-  }, [addRemoveFlag])
-
-  const changeFlag = () => {
-    setAddRemoveFlag(addRemoveFlag + 1);
-  }
+  }, [playerList])
 
   const fetchSinglePlayer = async (playerId) => {
     try {
@@ -46,20 +42,14 @@ const App = () => {
 
   return (
     <div>
-      <Form changeFlag={changeFlag}/>
+      <Form/>
       <AllPlayersContainer
         playerList={playerList}
         selectedPlayer={selectedPlayer}
         fetchSinglePlayer={fetchSinglePlayer}
         backToAllPlayers={backToAllPlayers}
-        changeFlag={changeFlag} />
+      />
     </div>
-    //new-player-form
-    //all-player-container
-    //mapped single players
-    //API Data and two buttons
-    //details button will redraw page with detailed-player
-    //detailed-player needs a back button and teams info
   )
 }
 

@@ -5,7 +5,6 @@ const Form = (props) => {
   const [name, setName] = useState('')
   const [breed, setBreed] = useState('')
   const [url, setUrl] = useState('')
-  const changeFlag = props.changeFlag;
   return (
     <form className="form" onSubmit={async (event) => {
       event.preventDefault();

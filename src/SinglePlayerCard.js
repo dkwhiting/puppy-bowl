@@ -4,7 +4,6 @@ const SinglePlayerCard = (props) => {
   const player = props.player;
   const fetchSinglePlayer = props.fetchSinglePlayer;
   const deletePlayer = props.deletePlayer
-  const changeFlag = props.changeFlag
   return (
     <div
       className="single-player-card">
@@ -23,7 +22,6 @@ const SinglePlayerCard = (props) => {
         <button className="remove-player-button" data-id={player.id} onClick={async (event) => {
           console.log(player.id)
           await deletePlayer(player.id)
-          changeFlag()
         }}>
           Remove from roster
         </button>
