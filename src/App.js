@@ -12,8 +12,6 @@ const App = () => {
     try {
       const response = await fetch(`${APIURL}/players`,);
       const result = await response.json();
-
-      //console.log(result.data.players)
       setPlayerList(result.data.players)
     } catch (err) {
       console.log(err, 'Trouble fetching players')
@@ -22,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     getPlayers();
-  })
+  },)
 
   const fetchSinglePlayer = async (playerId) => {
     try {
