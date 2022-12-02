@@ -22,8 +22,6 @@ const AllPlayersContainer = (props) => {
             />
           )
         })
-
-
     }</div>
   )
 }

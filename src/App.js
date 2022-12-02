@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import AllPlayersContainer from "./AllPlayersContainer";
 import Form from "./Form"
+import './App.css'
+
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2211-ftb-et-web-ft/`;
 
 const App = () => {
@@ -19,9 +21,10 @@ const App = () => {
     }
   }
 
+  //using playerList here will make constant fetch requests. can we set a 
   useEffect(() => {
     getPlayers();
-  }, [playerList])
+  }, [])
 
   const fetchSinglePlayer = async (playerId) => {
     try {
