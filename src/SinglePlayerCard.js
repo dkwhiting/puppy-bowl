@@ -18,7 +18,7 @@ const SinglePlayerCard = (props) => {
         <button
           className="detail-button"
           data-id={player.id}
-          onClick={() => { fetchSinglePlayer(player.id); console.log(player) }}>
+          onClick={() => { fetchSinglePlayer(player.id)}}>
           See Details
         </button>
         <button

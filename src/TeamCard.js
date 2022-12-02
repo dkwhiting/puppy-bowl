@@ -4,20 +4,24 @@ import { fetchTeams } from "./index";
 const teamCard = (props) => {
   const player = props.player
   const fetchSinglePlayer = props.fetchSinglePlayer
+  const [teammates, setTeammates] = useState([])
 
   const getTeammates = async () => {
-    let teams = await fetchTeams()
-    let currentTeam
-    for (let i in teams) {
-      if (teams[i].id === player.teamId) {
-        currentTeam = teams[i]
-      }
+    try {
+      let teams = await fetchTeams()
+      teams.forEach(team => {
+        if (team.id === player.teamId){
+          setTeammates(team.players)
+        }
+      })
+    } catch (err) {
+      console.error('No teammates pal',err)
     }
-
-    return await currentTeam.players
   }
-
-  let teammates = getTeammates()
+  
+  useEffect(()=> {
+    getTeammates();
+  }, [])
 
   return (
     <div className="team">
@@ -26,11 +30,11 @@ const teamCard = (props) => {
         :
         <><h2>Teammates</h2>
           <ul>
-            {teammates.length <= 1
+            {teammates.length
               ? teammates.map((teammate) => {
-                return player.name != teammate.name
+                return (player.name != teammate.name
                   ? <li key={teammate.id} onClick={() => { fetchSinglePlayer(teammate.id) }}>{teammate.name}</li>
-                  : null
+                  : null)
               })
               : <li>Team {player.team.name} has no other players!</li>
 
