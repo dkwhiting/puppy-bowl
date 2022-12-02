@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config()
+
 import React, { useState, useEffect } from "react";
 import AllPlayersContainer from "./AllPlayersContainer";
 import Form from "./Form"
