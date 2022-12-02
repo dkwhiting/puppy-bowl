@@ -1,4 +1,5 @@
 * {
+    color:darkslategrey;
 }
 
 #all-players-container {
@@ -10,14 +11,11 @@
   
   .form {
     display: flex;
+    flex-direction: column;
     gap: 20px;
     background-color: burlywood;
     padding-top: 20px;
     border: 2px solid black;
-  }
-
-  .form #header {
-    display: flex;
   }
   
   .single-player-card {
@@ -33,6 +31,12 @@
     background-color: white;
   }
   
+  #labelInput {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
   .single-player-card img,
   .single-player-view img {
     width: 100%;
