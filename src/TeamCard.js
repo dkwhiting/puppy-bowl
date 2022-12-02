@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from "react";
-
+import { fetchTeams } from "./index";
 
 const teamCard = (props) => {
   const player = props.player
   const fetchSinglePlayer = props.fetchSinglePlayer
-  // console.log(player.team)
+
+  const getTeammates = async () => {
+    let teams = await fetchTeams()
+    let currentTeam
+    for (let i in teams) {
+      if (teams[i].id === player.teamId) {
+        currentTeam = teams[i]
+      }
+    }
+
+    return await currentTeam.players
+  }
+
+  let teammates = getTeammates()
+
   return (
     <div className="team">
       {player.teamId == null
@@ -12,8 +26,8 @@ const teamCard = (props) => {
         :
         <><h2>Teammates</h2>
           <ul>
-            {player.team.players.length === 0
-              ? player.team.players.map((teammate) => {
+            {teammates.length <= 1
+              ? teammates.map((teammate) => {
                 return player.name != teammate.name
                   ? <li key={teammate.id} onClick={() => { fetchSinglePlayer(teammate.id) }}>{teammate.name}</li>
                   : null
