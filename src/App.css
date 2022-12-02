@@ -1,12 +1,23 @@
+* {
+}
+
 #all-players-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    background-color: beige;
   }
   
   .form {
     display: flex;
-    gap: 25px;
+    gap: 20px;
+    background-color: burlywood;
+    padding-top: 20px;
+    border: 2px solid black;
+  }
+
+  .form #header {
+    display: flex;
   }
   
   .single-player-card {
@@ -16,10 +27,10 @@
     margin: 5px 10px;
     padding: 10px;
     border-radius: 10px;
-  
     display: flex;
     flex-direction: column;
-    justify-content: flex-start
+    justify-content: flex-start;
+    background-color: white;
   }
   
   .single-player-card img,

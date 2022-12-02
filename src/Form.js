@@ -13,14 +13,17 @@ const Form = (props) => {
 
     }}>
       <div>
+        <h1>The Adam Dallin Maria Puppy Bowl</h1>
+      </div>
+      <div id = "header">
         <label htmlFor="name">Name:</label>
         <input value={name} type="text" id="name" onChange={(event) => setName(event.target.value)}></input>
       </div>
-      <div>
+      <div id = "header">
         <label htmlFor="breed">Breed:</label>
         <input value={breed} type="text" id="breed" onChange={(event) => setBreed(event.target.value)}></input>
       </div>
-      <div>
+      <div id = "header">
         <label htmlFor="url">ImageURL:</label>
         <input value={url} type="text" id="breed" onChange={(event) => { setUrl(event.target.value) }}></input>
       </div>

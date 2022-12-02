@@ -26,9 +26,7 @@ const SinglePlayerCard = (props) => {
           data-id={player.id}
           onClick={async () => {
             console.log(player.id);
-            // let newList = [...playerList];
             await deletePlayer(player.id);
-            // await setPlayerList(newList);
           }}>
           Remove from roster
         </button>

@@ -19,7 +19,8 @@ const AllPlayersContainer = (props) => {
             player={player} 
             key={player.id} 
             deletePlayer={deletePlayer} 
-            fetchSinglePlayer={fetchSinglePlayer} playerList={playerList}
+            fetchSinglePlayer={fetchSinglePlayer} 
+            playerList={playerList}
             />
           )
         })

@@ -23,7 +23,7 @@ const App = () => {
 
   useEffect(() => {
     getPlayers();
-  }, [playerList])
+  }, [])
 
   const fetchSinglePlayer = async (playerId) => {
     try {
