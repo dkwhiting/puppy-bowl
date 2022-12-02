@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import AllPlayersContainer from "./AllPlayersContainer";
 import Form from "./Form"
@@ -6,7 +7,6 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/2211-ftb-et-web-ft/`;
 const App = () => {
   const [playerList, setPlayerList] = useState([]);
   const [selectedPlayer, setSelectedPlayer] = useState({})
-  //call setPlayerlist in deletePlayer and set useEffect to monitor playerList
   const getPlayers = async () => {
     try {
       const response = await fetch(`${APIURL}/players`,);

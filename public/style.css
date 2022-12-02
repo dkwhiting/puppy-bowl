@@ -19,7 +19,7 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start
 }
 
 .single-player-card img,
@@ -32,6 +32,13 @@
 .pup-buttons {
   display: flex;
   flex-direction: column;
+  margin-top: auto;
+}
+
+.team {
+  width: 300px;
+  height: 300px;
+  border: 2px solid black
 }
 
 .header-info {
@@ -53,13 +60,22 @@
   font-style: italic;
 }
 
+
 .single-player-view {
+  flex-basis: 800px;
+
+  margin: 5px 10px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.single-player-view .left-div {
   flex-basis: 500px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
   margin: 5px 10px;
   padding: 10px;
   border-radius: 10px;
-
   display: flex;
   flex-direction: column;
 }
