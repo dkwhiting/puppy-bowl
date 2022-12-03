@@ -27,7 +27,7 @@ const Form = (props) => {
     <form className="form" onSubmit={async (event) => {
       event.preventDefault();
       if (url == '') {
-        setUrl('https://loremflickr.com/320/480/dog')
+        setUrl('https://learndotresources.s3.amazonaws.com/workshop/60ad725bbe74cd0004a6cba0/puppybowl-default-dog.png')
       }
       await addNewPlayer(name, breed, url, team);
       if (event.target[3].selectedIndex === 0) {
