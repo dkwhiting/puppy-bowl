@@ -84,13 +84,6 @@ input {
   object-fit: cover;
 }
 
-.left-div img {
-  height: 75%;
-  border-radius: 20px;
-  object-fit: cover;
-  flex: 1 0 200px;
-}
-
 .team h2 {
   text-decoration: underline;
 }
@@ -204,6 +197,7 @@ p {
 .single-player-view .left-div {
   background-color: rgb(168, 205, 192);
   height: 80vh;
+  width: 40vw;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
   margin: 5px 10px;
   padding: 10px;
@@ -220,6 +214,13 @@ p {
 .single-player-view .header-info {
   display: flex;
   justify-content: space-between;
+}
+
+.left-div img {
+  height: 75%;
+  border-radius: 20px;
+  object-fit: cover;
+  flex: 1 0 200px;
 }
 
 button {
