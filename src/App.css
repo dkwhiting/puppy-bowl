@@ -1,48 +1,77 @@
 * {
-  color: darkslategrey;
+  /* color: darkslategrey; */
+  font-family: sans-serif;
+  box-sizing: border-box
 }
 
 #all-players-container {
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   background-color: darkslategray;
 }
 
-.form {
+form {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 20px;
   background-color: beige;
   padding-top: 20px;
   padding-left: 15px;
   padding-bottom: 20px;
   padding-right: 15px;
+  border-radius: 20px;
+}
+
+input {
+  border-radius: 5px;
 }
 
 .single-player-card {
   display: flex;
-  flex-basis: auto;
+  height: auto;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
   margin: 5px 10px;
   padding: 10px;
   border-radius: 10px;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: rgb(168, 205, 192);
+  flex: 0 1 400px;
 }
 
-.navBar {
+/* .team-label {
+  display: flex;
+} */
+
+#team-logo {
+  width: 200px;
+  height: 200px;
+}
+
+.team {
+  border: none;
+  padding: 20px 0;
+}
+
+.team-label>img {
+  width: 100px;
+}
+
+.nav-bar {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 5px;
   background-color: rgb(168, 205, 192);
   padding: 20px;
   border: 2px solid darkslategrey;
 }
 
-.labelInput {
+
+.label-input {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -50,13 +79,20 @@
   font-size: larger;
 }
 
-.single-player-card img,
-.single-player-view img {
-  width: 400px;
-  height: 490px;
-  border-radius: 10px;
-  margin: 10px 0px;
+.single-player-card img {
+  width: 100%;
   object-fit: cover;
+}
+
+.left-div img {
+  height: 75%;
+  border-radius: 20px;
+  object-fit: cover;
+  flex: 0 0 200px;
+}
+
+.team h2 {
+  text-decoration: underline;
 }
 
 button {
@@ -78,7 +114,8 @@ button:hover {
 #submit {
   height: 22px;
   margin-top: 0;
-
+  background-color: black;
+  color: white;
 }
 
 .pup-buttons {
@@ -88,17 +125,38 @@ button:hover {
 }
 
 .remove-player-button {
+  height: 30px;
   margin-top: 5px;
 }
 
-.detail {
+.detail-button {
+  height: 30px;
   margin-top: 5px;
 }
 
 .team {
+  background-color: rgb(168, 205, 192);
+  border-radius: 20px;
   width: 300px;
-  height: 300px;
-  border: 2px solid black
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.team h2 {
+  margin: 0;
+}
+
+.team li {
+  list-style-type: circle;
+}
+
+.team ul {
+  padding-left: 0;
 }
 
 .header-info {
@@ -106,13 +164,27 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   line-height: 10px;
+  margin: 5px 0 10px 0;
+}
+
+p {
+  margin: 5px;
 }
 
 .header-info>p {
   margin: 5px;
+  text-align: left;
+}
+
+#see-all {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  align-self: center;
 }
 
 .pup-title {
+  padding: 5px 0;
   font-size: x-large;
 }
 
@@ -122,24 +194,80 @@ button:hover {
 
 
 .single-player-view {
-  flex-basis: 800px;
-
   margin: 5px 10px;
   padding: 10px;
   border-radius: 10px;
   display: flex;
+  justify-content: center;
 }
 
 .single-player-view .left-div {
-  flex-basis: 500px;
+  background-color: rgb(168, 205, 192);
+  height: 80vh;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
   margin: 5px 10px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
+  /* align-items: center; */
 }
 
 .single-player-view>p {
   margin: 10px 0px 0px 0px;
+}
+
+.single-player-view .header-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+@media (max-width: 1600px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-bar h2 {
+    font-size: 50px;
+    margin: 10px;
+  }
+
+}
+
+@media (max-width: 1200px) {
+  form {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-bar h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .single-player-card {
+    width: 90vw;
+  }
+
+  .single-player-view {
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+  }
+
+  .input {
+    width: 50vw;
+  }
+
 }

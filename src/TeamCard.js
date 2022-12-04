@@ -29,11 +29,13 @@ const teamCard = (props) => {
         ? <h2>{player.name} is not on a team!</h2>
         :
         <>
-          <img src={require(`./images/${player.team.name.toLowerCase()}.png`)} alt={`${player.team.name} logo`}></img>
+          <img id="team-logo"
+            src={require(`./images/${player.team.name.toLowerCase()}.png`)}
+            alt={`${player.team.name} logo`}></img>
           <h2>Teammates</h2>
 
           <ul>
-            {teammates.length
+            {teammates.length > 1
               ? teammates.map((teammate) => {
                 return (player.name != teammate.name
                   ? <li key={teammate.id} onClick={() => { fetchSinglePlayer(teammate.id) }}>{teammate.name}</li>
