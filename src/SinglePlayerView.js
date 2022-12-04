@@ -5,6 +5,14 @@ const SinglePlayerView = (props) => {
   const player = props.selectedPlayer;
   const backToAllPlayers = props.backToAllPlayers;
   const fetchSinglePlayer = props.fetchSinglePlayer
+  const noTeam = () => {
+    if (player.teamId == null) {
+      const empty = ''
+      return empty
+    } else {
+      return player.team.name
+    }
+  }
 
   return (
     <div className="single-player-view">
@@ -13,7 +21,7 @@ const SinglePlayerView = (props) => {
           <p className="pup-title">{player.name}</p>
           <p className="pup-number">{'#' + player.id}</p>
         </div>
-        <p>{'Team: ' + player.team.name}</p>
+        <p>{`Team: ${noTeam()}`}</p>
         <p>{'Breed: ' + player.breed}</p>
         <img src={player.imageUrl} alt={`photo of ${player.name} the puppy`} />
         <button id="see-all" onClick={() => { backToAllPlayers() }}>Back to all players</button>

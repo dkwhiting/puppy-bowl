@@ -18,8 +18,8 @@ const SinglePlayerCard = (props) => {
         <button
           className="detail-button"
           data-id={player.id}
-          onClick={() => { fetchSinglePlayer(player.id) }}>
-          See Details
+          onClick={() => { fetchSinglePlayer(player.id)}}>
+          See My Details
         </button>
         <button
           className="remove-player-button"
@@ -27,8 +27,7 @@ const SinglePlayerCard = (props) => {
           onClick={async () => {
             console.log(player.id);
             await deletePlayer(player.id);
-          }}>
-          Remove from roster
+          }}>Remove Me
         </button>
       </div>
     </div >
