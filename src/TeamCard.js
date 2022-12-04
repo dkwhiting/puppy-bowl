@@ -31,7 +31,7 @@ const teamCard = (props) => {
         <>
           <img id="team-logo"
             src={require(`./images/${player.team.name.toLowerCase()}.png`)}
-            alt={`${player.team.name} logo`}></img>
+            alt={`${player.team.name} logo`} />
           <h2>Teammates</h2>
 
           <ul>
