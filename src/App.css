@@ -21,7 +21,7 @@
     padding-right: 15px;
   }
   
-  .single-player-card .single-player-view{
+  .single-player-card {
     display: flex;
     flex-basis: auto;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
