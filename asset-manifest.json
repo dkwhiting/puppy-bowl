@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/puppy-bowl-react/static/css/main.8b36743d.css",
-    "main.js": "/puppy-bowl-react/static/js/main.76876187.js",
+    "main.css": "/puppy-bowl-react/static/css/main.f538315f.css",
+    "main.js": "/puppy-bowl-react/static/js/main.3f136bc5.js",
     "static/media/fluff.png": "/puppy-bowl-react/static/media/fluff.34e1b2af50801cceb15b.png",
     "static/media/ruff.png": "/puppy-bowl-react/static/media/ruff.39ce1b409c060a160d1d.png",
     "index.html": "/puppy-bowl-react/index.html",
-    "main.8b36743d.css.map": "/puppy-bowl-react/static/css/main.8b36743d.css.map",
-    "main.76876187.js.map": "/puppy-bowl-react/static/js/main.76876187.js.map"
+    "main.f538315f.css.map": "/puppy-bowl-react/static/css/main.f538315f.css.map",
+    "main.3f136bc5.js.map": "/puppy-bowl-react/static/js/main.3f136bc5.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b36743d.css",
-    "static/js/main.76876187.js"
+    "static/css/main.f538315f.css",
+    "static/js/main.3f136bc5.js"
   ]
 }
