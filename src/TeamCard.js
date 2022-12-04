@@ -27,24 +27,17 @@ const teamCard = (props) => {
     <div className="team">
       {player.teamId == null
         ? <h2>{player.name} is not on a team!</h2>
-        :
-        <><h2>Teammates</h2>
-          <ul>
-            {teammates.length
+        :<><h2>Teammates</h2>
+          <ul>{teammates.length
               ? teammates.map((teammate) => {
                 return (player.name != teammate.name
                   ? <li key={teammate.id} onClick={() => { fetchSinglePlayer(teammate.id) }}>{teammate.name}</li>
                   : null)
               })
               : <li>Team {player.team.name} has no other players!</li>
-
-
-            }
-
-          </ul></>
+            }</ul></>
       }
     </div>
-
   )
 }
 
