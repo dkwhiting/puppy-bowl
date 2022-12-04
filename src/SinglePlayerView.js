@@ -29,7 +29,7 @@ const SinglePlayerView = (props) => {
       <div className="right">
         <TeamCard player={player} fetchSinglePlayer={fetchSinglePlayer} />
       </div>
-    </div>
+    </div >
   )
 }
 
