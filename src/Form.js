@@ -40,26 +40,31 @@ const Form = (props) => {
     }
     }>
       <div>
-        <label htmlFor="name">Name:</label>
-        <input value={name} type="text" id="name" onChange={(event) => setName(event.target.value)}></input>
+        <h2>Adam Dallin & Maria Puppy Bowl</h2>
       </div>
-      <div>
-        <label htmlFor="breed">Breed:</label>
-        <input value={breed} type="text" id="breed" onChange={(event) => setBreed(event.target.value)}></input>
-      </div>
-      <div>
-        <label htmlFor="url">ImageURL:</label>
-        <input value={url} type="text" id="image" onChange={(event) => { setUrl(event.target.value) }}></input>
-      </div>
-      <div>
-        <label htmlFor="team-id">Team:</label>
-        <select type="number" id="team" onChange={(event) => { setTeam(event.target.value) }}>
-          <option value={team}>Free Agent</option>
-          <option value={532}>Ruff</option>
-          <option value={533}>Fluff</option>
-        </select>
-      </div>
-      <button>Submit</button>
+      <div className="navBar"> 
+        <div className = "labelInput">
+          <label htmlFor="name">Name:</label>
+          <input value={name} type="text" id="name" onChange={(event) => setName(event.target.value)}></input>
+        </div>
+        <div className = "labelInput">
+          <label htmlFor="breed">Breed:</label>
+          <input value={breed} type="text" id="breed" onChange={(event) => setBreed(event.target.value)}></input>
+        </div>
+       <div className = "labelInput">
+          <label htmlFor="url">ImageURL:</label>
+          <input value={url} type="text" id="image" onChange={(event) => { setUrl(event.target.value) }}></input>
+       </div>
+       <div className = "labelInput">
+          <label htmlFor="team-id">Team:</label>
+          <select type="number" id="team" onChange={(event) => { setTeam(event.target.value) }}>
+            <option value={team}>Free Agent</option>
+            <option value={532}>Ruff</option>
+            <option value={533}>Fluff</option>
+          </select>
+        </div>
+          <button id ="submit">Submit</button>
+        </div> 
     </form >
   )
 }
