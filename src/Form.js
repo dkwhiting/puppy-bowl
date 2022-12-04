@@ -47,19 +47,19 @@ const Form = (props) => {
 
           <div className="label-input">
             <label htmlFor="name">Name:</label>
-            <input value={name} type="text" id="name" class="input" onChange={(event) => setName(event.target.value)}></input>
+            <input value={name} type="text" id="name" className="input" onChange={(event) => setName(event.target.value)}></input>
           </div>
           <div className="label-input">
             <label htmlFor="breed">Breed:</label>
-            <input value={breed} type="text" id="breed" class="input" onChange={(event) => setBreed(event.target.value)}></input>
+            <input value={breed} type="text" id="breed" className="input" onChange={(event) => setBreed(event.target.value)}></input>
           </div>
           <div className="label-input">
             <label htmlFor="url">ImageURL:</label>
-            <input value={url} type="text" id="image" class="input" onChange={(event) => { setUrl(event.target.value) }}></input>
+            <input value={url} type="text" id="image" className="input" onChange={(event) => { setUrl(event.target.value) }}></input>
           </div>
           <div className="label-input">
             <label htmlFor="team-id">Team:</label>
-            <select type="number" id="team" class="input" onChange={(event) => { setTeam(event.target.value) }}>
+            <select type="number" id="team" className="input" onChange={(event) => { setTeam(event.target.value) }}>
               <option value={team}>Free Agent</option>
               <option value={532}>Ruff</option>
               <option value={533}>Fluff</option>

@@ -88,7 +88,7 @@ input {
   height: 75%;
   border-radius: 20px;
   object-fit: cover;
-  flex: 0 0 200px;
+  flex: 1 0 200px;
 }
 
 .team h2 {
